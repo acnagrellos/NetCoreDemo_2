@@ -1,0 +1,11 @@
+1. Crea un proyecto .Net Core con la plantilla de vacío que se llame ApiStructure
+2. Cambia el puerto del perfil ApiStructure al 9449. Ejécuta la solución con ese perfil.
+3. Ataca a tu API con la url: https://localhost:9449/test. ¿Que te devuelve? (usa postman)
+4. En lugar de devolver Hello world! en cada petición, devuelve la hora que el sistema se conectó, la hora de la request actual, y la hora en el que se hace el new de un servicio que se llame MiServicioConHora. Para ello usa la inyección de dependencias en sus tres formas.
+5. Añade en el appsettings.json un parametro "ProjectSettings" y dentro de este otro con "ProjectName" cuyo valor será "ApiStructure". Saca ese valor en las requests como "Hello <nombredelproyecto>".
+6. Añade un fichero appsettings.staging.json donde el nombre del proyecto sea ApiStructureStaging. Ejecuta el proyecto en modo Staging y comprueba que ese es el nombre que usa ahora.
+7. Crea un servicio que se llame MiServicioEnProd que cumpla un interfaz IServiceEnvironment. Este interfaz tendrá un método que se llamará GetEnvironment y devolverá un string. Para el caso de MiServicioEnProd el servicio devolverá "Prod". Crea otro servicio que se llame MiServicioEnDev que implemente el interfaz IServiceEnvironment. En este caso el servicio devolverá "Dev" en el método GetEnvironment. Usa el servicio MiServicioEnDev solo cuando sea development el entorno que estamos ejecutando. Saca en la request "Hello <projectname>! This is environment <enviroment>"
+8. Configura las settings para que se puedan refrescar en caliente. Haz la prueba de que funciona con el ejercicio anterior.
+9. Pon un logger en tu aplicación y logea un mensaje antes de enviar el mismo string que diga: "Siempre se hace la misma llamada".
+10. Devuelve un error 404 cuando el path de la request no empiece por "/api".
+11. Crea un middleware que compruebe si la peticion tiene una cabecera llamada x-language. Si es así, guarda ese valor en un servicio que se llame MiLenguaje, si no hay cabecera por defecto su valor será "esp". Este servicio deberá de ser el mismo en toda la llamada. Saca el valor de este lenguaje por pantalla en el mensaje con un: "Hello <projectname>! This is environment <enviroment>, el lenguaje utilizado es <lang>"
