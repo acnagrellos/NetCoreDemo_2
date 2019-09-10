@@ -1,0 +1,3 @@
+# Demo Cuenta de Ahorro
+
+Esta demo trata de ver como se trabaja con los Interfaces en C#. Se trata de crear una cuenta de ahorro donde podemos elegir si la queremos del banco o una hucha en casa. La cuenta del banco al ingresar dinero en ella nos quitarán unos impuestos, pero nos permitirá tener saldo negativo. Por otro lado, en nuestra hucha no nos cobran impuestos pero no podemos tener salgo negativo.
