@@ -24,6 +24,8 @@
     * Appsettings en .NET Core, por Alberto Diaz Martin: https://blogs.encamina.com/piensa-en-software-desarrolla-en-colores/appsettings-environment-net-core/
     * Variables de entorno en .NET CORE, por Adonis Mendoza: https://medium.com/@adonis.mendoza/crear-variables-de-entornos-en-asp-net-core-b8df06ca9cc4
     * Patrón Builder, por Albert Capdevila: https://albertcapdevila.net/patron-builder-csharp-net/
+5. ASP.NET MVC
+    * Api Versioning en ASP.NET MVC: https://koukia.ca/api-versioning-in-asp-net-core-2-0-1b55970aa29d
 * Instalaciones
     * Visual Studio: https://visualstudio.microsoft.com
     * SQLServer Express: https://www.microsoft.com/es-es/sql-server/sql-server-editions-express
