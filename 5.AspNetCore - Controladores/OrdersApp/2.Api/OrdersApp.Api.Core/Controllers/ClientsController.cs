@@ -26,21 +26,21 @@ namespace OrdersApp.Api.Core.Controllers
         }
 
         [HttpGet(ApiConstants.IdParamUri)]
-        public async Task<ActionResult> Get(int id)
+        public async Task<ActionResult> Get([FromRoute] int id)
         {
             var client = await _clientsService.Get(id);
             return Ok(client);
         }
 
         [HttpPut]
-        public async Task<ActionResult> Put(ClientDto client)
+        public async Task<ActionResult> Put([FromBody] ClientDto client)
         {
             await _clientsService.Update(client);
             return Ok();
         }
 
         [HttpPost]
-        public async Task<ActionResult> Post(ClientDto client)
+        public async Task<ActionResult> Post([FromBody] ClientDto client)
         {
             var id = await _clientsService.Create(client);
             return Created($"/{ApiConstants.BaseUri}/{ApiConstants.IdParamUri}/{id}", id);
