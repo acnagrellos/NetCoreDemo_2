@@ -26,6 +26,10 @@
     * Patrón Builder, por Albert Capdevila: https://albertcapdevila.net/patron-builder-csharp-net/
 5. ASP.NET MVC
     * Api Versioning en ASP.NET MVC: https://koukia.ca/api-versioning-in-asp-net-core-2-0-1b55970aa29d
+6. Capa de Acceso a Datos
+    * ¿Que es un ORM? por José Manuel Alarcón: https://www.campusmvp.es/recursos/post/que-es-un-orm.aspx
+    * Entity Framework Core: https://www.entityframeworktutorial.net/efcore/entity-framework-core.aspx
+    * Dapper: https://dapper-tutorial.net/dapper
 * Instalaciones
     * Visual Studio: https://visualstudio.microsoft.com
     * SQLServer Express: https://www.microsoft.com/es-es/sql-server/sql-server-editions-express
