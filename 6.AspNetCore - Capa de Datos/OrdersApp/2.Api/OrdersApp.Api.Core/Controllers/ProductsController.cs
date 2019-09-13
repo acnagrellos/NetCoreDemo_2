@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Net;
+using Microsoft.AspNetCore.Mvc;
 using OrdersApp.Api.Configuration;
 using OrdersApp.Domain.Models;
 using OrdersApp.Services.Contracts;
@@ -19,6 +20,7 @@ namespace OrdersApp.Api.Core.Controllers
         }
 
         [HttpGet]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
         public async Task<ActionResult> GetAlls()
         {
             var clients = await _productsService.GetAlls();
@@ -26,21 +28,26 @@ namespace OrdersApp.Api.Core.Controllers
         }
 
         [HttpGet(ApiConstants.IdParamUri)]
-        public async Task<ActionResult> Get(int id)
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public async Task<ActionResult> Get([FromRoute] int id)
         {
             var client = await _productsService.Get(id);
             return Ok(client);
         }
 
         [HttpPut]
-        public async Task<ActionResult> Put(ProductDto productDto)
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public async Task<ActionResult> Put([FromBody] ProductDto productDto)
         {
             await _productsService.Update(productDto);
             return Ok();
         }
 
         [HttpPost]
-        public async Task<ActionResult> Post(ProductDto productDto)
+        [ProducesResponseType((int)HttpStatusCode.Created)]
+        public async Task<ActionResult> Post([FromBody] ProductDto productDto)
         {
             var id = await _productsService.Create(productDto);
             return Created($"/{ApiConstants.BaseUri}/{ApiConstants.IdParamUri}/{id}", id);

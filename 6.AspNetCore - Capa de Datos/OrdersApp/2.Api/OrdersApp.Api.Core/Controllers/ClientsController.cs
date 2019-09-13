@@ -2,6 +2,7 @@
 using OrdersApp.Api.Configuration;
 using OrdersApp.Domain.Models;
 using OrdersApp.Services.Contracts;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace OrdersApp.Api.Core.Controllers
@@ -19,6 +20,7 @@ namespace OrdersApp.Api.Core.Controllers
         }
 
         [HttpGet]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
         public async Task<ActionResult> GetAlls()
         {
             var clients = await _clientsService.GetAlls();
@@ -26,21 +28,26 @@ namespace OrdersApp.Api.Core.Controllers
         }
 
         [HttpGet(ApiConstants.IdParamUri)]
-        public async Task<ActionResult> Get(int id)
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public async Task<ActionResult> Get([FromRoute] int id)
         {
             var client = await _clientsService.Get(id);
             return Ok(client);
         }
 
         [HttpPut]
-        public async Task<ActionResult> Put(ClientDto client)
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public async Task<ActionResult> Put([FromBody] ClientDto client)
         {
             await _clientsService.Update(client);
             return Ok();
         }
 
         [HttpPost]
-        public async Task<ActionResult> Post(ClientDto client)
+        [ProducesResponseType((int)HttpStatusCode.Created)]
+        public async Task<ActionResult> Post([FromBody] ClientDto client)
         {
             var id = await _clientsService.Create(client);
             return Created($"/{ApiConstants.BaseUri}/{ApiConstants.IdParamUri}/{id}", id);
