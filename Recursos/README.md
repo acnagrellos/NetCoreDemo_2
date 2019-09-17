@@ -4,7 +4,6 @@
     * Descarga SDK .NET Core: https://dotnet.microsoft.com/download
     * Descarga de Visual Studio 2019: https://visualstudio.microsoft.com/vs/
     * Comandos dotnet cli: https://docs.microsoft.com/es-es/dotnet/core/tools/dotnet?tabs=netcore21
-    * Instalación de Postman: https://www.getpostman.com/downloads/
 2. Fundamentos de C#
     * Historia de C#, por Fernando Escolar: https://www.developerro.com/2019/02/05/historia-csharp/
     * Novedades en C# 8, por Fernando Escolar: https://www.developerro.com/2019/02/19/csharp-8/
@@ -33,4 +32,5 @@
 * Instalaciones
     * Visual Studio: https://visualstudio.microsoft.com
     * SQLServer Express: https://www.microsoft.com/es-es/sql-server/sql-server-editions-express
+    * Instalación de Postman: https://www.getpostman.com/downloads/
     * Git: https://git-scm.com/downloads

@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\4.Domain\OrdersApp.Domain.Data\OrdersApp.Domain.Data.csproj" />
+    <ProjectReference Include="..\..\4.Domain\OrdersApp.Domain.Models\OrdersApp.Domain.Models.csproj" />
+    <ProjectReference Include="..\OrdersApp.Services.Contracts\OrdersApp.Services.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>
