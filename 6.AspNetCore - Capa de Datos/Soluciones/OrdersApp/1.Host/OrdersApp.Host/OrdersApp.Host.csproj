@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <UserSecretsId>61830a8b-7e46-4412-b883-3211d4e7e5de</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="4.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="4.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\2.Api\OrdersApp.Api.Core\OrdersApp.Api.Core.csproj" />
+    <ProjectReference Include="..\..\3.Services\OrdersApp.Services.DapperServices\OrdersApp.Services.DapperServices.csproj" />
+    <ProjectReference Include="..\..\3.Services\OrdersApp.Services.EFServices\OrdersApp.Services.EFServices.csproj" />
+    <ProjectReference Include="..\..\3.Services\OrdersApp.Services.MemoryServices\OrdersApp.Services.MemoryServices.csproj" />
+    <ProjectReference Include="..\..\4.Domain\OrdersApp.Domain.Data\OrdersApp.Domain.Data.csproj" />
+  </ItemGroup>
+
+</Project>

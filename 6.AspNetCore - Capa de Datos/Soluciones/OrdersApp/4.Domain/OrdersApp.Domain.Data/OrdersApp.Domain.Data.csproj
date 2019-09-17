@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20190328094750_CustomerMigration.cs" />
+    <Compile Remove="Migrations\20190328105437_InitialMigration.cs" />
+    <Compile Remove="Migrations\20190328105702_FullNameMigration.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OrdersApp.Domain.Core\OrdersApp.Domain.Core.csproj" />
+  </ItemGroup>
+
+</Project>
